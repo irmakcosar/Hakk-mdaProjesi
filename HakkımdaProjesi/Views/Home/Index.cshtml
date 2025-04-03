@@ -1,0 +1,97 @@
+﻿ @model HakkımdaProjesi.Models.AboutModel
+<!DOCTYPE html>
+    <html>
+    <head>
+
+        <title>IRMAK COŞAR</title>
+   
+        <style>
+        .card {
+            /*
+                kişisel bilgilerimin olduğu listeleme yerini card içine aldım ve stil işlemlerini uyguladım daha güzel durması için
+            */
+            width: 300px; /* Kartın genişliği */
+            border: 1px solid #ddd; /* Kenarlık */
+            border-radius: 8px; /* Köşe yuvarlama */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölgeleme */
+            overflow: hidden; /* İçerik taşması durumunda gizleme */
+            background:#fff ; /* Arka plan rengi */
+            margin: 20px; /* Dış boşluk */
+            transition: transform 0.3s ease; /* Geçiş efekti */
+        }
+        
+        .text{
+            width: 300px; /* Kartın genişliği */
+            border: 1px solid #ddd; /* Kenarlık */
+            border-radius: 8px; /* Köşe yuvarlama */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölgeleme */
+            overflow: hidden; /* İçerik taşması durumunda gizleme */
+            background: #fff; /* Arka plan rengi */
+            margin: 20px; /* Dış boşluk */
+            transition: transform 0.3s ease; /* Geçiş efekti */
+        }
+
+        </style>
+    
+       
+
+    </head>
+    <body>
+    <div>
+        <div style="margin-top:auto; margin-left:auto;margin-right:auto ;text-align:center; background-color:darkcyan" >
+            <a href="https://www.instagram.com/irmakkcosar/">Irmak Coşar</a> 'ın Biyografisi
+        </div>
+
+    </div>
+    <div>
+        <div>
+            <img src="C:/Users/IRMAK/Downloads/367512875_626368365979362_787240819704723709_n.jpg" alt="Irmak Coşar">
+
+        </div>
+        
+        <div class="card">kişisel bilgiler
+            <div class="card-body">
+            <ul>
+                    <li>@Model.Name</li>
+             <li>
+                 Yaş:19
+             </li>
+             <li>
+                 Boy:162
+             </li>
+             <li>
+                 Medeni Durumu:Bekar
+             </li>
+             <li>
+                 Eğitim durumu:Üniversite öğrencisi
+             </li>
+             <li>
+                 İkametgah Adresi:İstanbul/Pendik
+             </li>
+
+             </ul>
+            </div>
+        </div>
+                <div>
+            <h4>Biyografi</h4>
+                    <hr />
+                    @Model.Bio
+                    
+                </div>
+
+        <h4>Hobilerim</h4>
+        <div class="text">
+            <ul>
+                @foreach (var hobby in Model.Hobbies)
+                {
+                    <li>@hobby</li>
+                }
+            </ul>
+        </div>
+       
+
+    </div>
+
+
+    </body>
+    </html>
